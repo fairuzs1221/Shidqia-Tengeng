@@ -1375,3 +1375,105 @@ footer {
         scroll-behavior: auto !important;
     }
 }
+
+/* ==========================================
+   JAVASCRIPT ANIMATION
+   ========================================== */
+
+
+/* Scroll Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Navbar saat scroll */
+
+header {
+    transition:
+        background 0.4s ease,
+        box-shadow 0.4s ease,
+        backdrop-filter 0.4s ease;
+}
+
+header.scrolled {
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Navigation aktif */
+
+nav a.active {
+    font-weight: 600;
+}
+
+
+/* Ripple Button */
+
+.button,
+.btn,
+button,
+.whatsapp-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+
+    border-radius: 50%;
+
+    transform: scale(0);
+
+    animation: rippleAnimation 0.6s linear;
+
+    pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+
+}
+
+
+/* Loading halaman */
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+
+/* Disable efek 3D di HP */
+
+@media (max-width: 768px) {
+
+    .property-card,
+    .project-card,
+    .about-box,
+    .skill-card,
+    .card {
+        transform: none !important;
+    }
+
+}
