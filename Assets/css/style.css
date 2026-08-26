@@ -917,12 +917,18 @@ footer p {
     }
 }
 
-/* =========================================
-   ANIMASI SHIDQIA ABADI PROPERTY
-   ========================================= */
+/* =====================================================
+   PROFESSIONAL ANIMATION
+   SHIDQIA ABADI PROPERTY
+   ===================================================== */
 
-/* Animasi saat halaman pertama dibuka */
-@keyframes fadeUp {
+/* ---------- BASIC ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes revealUp {
     from {
         opacity: 0;
         transform: translateY(35px);
@@ -934,11 +940,10 @@ footer p {
     }
 }
 
-/* Animasi muncul dari kiri */
-@keyframes slideLeft {
+@keyframes revealLeft {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-35px);
     }
 
     to {
@@ -947,11 +952,10 @@ footer p {
     }
 }
 
-/* Animasi muncul dari kanan */
-@keyframes slideRight {
+@keyframes revealRight {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(35px);
     }
 
     to {
@@ -960,169 +964,414 @@ footer p {
     }
 }
 
-/* Animasi mengambang */
-@keyframes floating {
-    0% {
+@keyframes softFloat {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
+        transform: translateY(-8px);
     }
 }
 
-/* Animasi glow */
-@keyframes softGlow {
-    0% {
-        box-shadow: 0 0 0 rgba(20, 80, 65, 0);
+@keyframes imageZoom {
+    from {
+        transform: scale(1.08);
     }
 
-    50% {
-        box-shadow: 0 0 30px rgba(20, 80, 65, 0.18);
-    }
-
-    100% {
-        box-shadow: 0 0 0 rgba(20, 80, 65, 0);
+    to {
+        transform: scale(1);
     }
 }
 
-/* Judul utama */
-.hero h1,
-.hero h2 {
-    animation: slideLeft 0.9s ease forwards;
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
-/* Paragraf */
-.hero p {
-    animation: fadeUp 1s ease 0.2s both;
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+    animation: revealUp .7s cubic-bezier(.22, 1, .36, 1) both;
 }
 
-/* Tombol */
-.hero .button,
-.hero a {
-    animation: fadeUp 1s ease 0.4s both;
-}
-
-/* Foto utama */
-.hero img,
-.home-image img {
-    animation:
-        slideRight 1s ease forwards,
-        floating 4s ease-in-out 1.2s infinite;
-}
-
-/* Card */
-.property-card,
-.project-card,
-.card,
-.about-box,
-.skill-card {
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-/* Hover card */
-.property-card:hover,
-.project-card:hover,
-.card:hover,
-.about-box:hover,
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* Tombol WhatsApp */
-button,
-.btn,
-.button,
-.whatsapp-btn {
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-}
-
-button:hover,
-.btn:hover,
-.button:hover,
-.whatsapp-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-}
-
-/* Logo */
 .logo {
-    transition: transform 0.3s ease;
+    transition:
+        transform .35s ease,
+        letter-spacing .35s ease;
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    letter-spacing: .5px;
 }
 
-/* Navbar */
-.navbar a {
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+nav a {
     position: relative;
-    transition: color 0.3s ease;
+    transition:
+        color .3s ease,
+        transform .3s ease;
 }
 
-.navbar a::after {
+nav a::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -6px;
+    bottom: 2px;
     width: 0;
     height: 2px;
     transform: translateX(-50%);
-    transition: width 0.3s ease;
+    transition: width .35s cubic-bezier(.22, 1, .36, 1);
 }
 
-.navbar a:hover::after {
-    width: 70%;
+nav a:hover {
+    transform: translateY(-2px);
 }
 
-/* Gambar property */
+nav a:hover::after {
+    width: 65%;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero .container,
+.home-content {
+    animation: revealUp 1s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+
+/* Judul hero */
+
+.hero h1,
+.hero h2 {
+    animation:
+        revealLeft .9s cubic-bezier(.22, 1, .36, 1) .15s both;
+}
+
+
+/* Deskripsi */
+
+.hero p {
+    animation:
+        revealUp .9s cubic-bezier(.22, 1, .36, 1) .3s both;
+}
+
+
+/* Tombol */
+
+.home-buttons {
+    animation:
+        revealUp .9s cubic-bezier(.22, 1, .36, 1) .45s both;
+}
+
+
+/* Info */
+
+.quick-info {
+    animation:
+        revealUp .9s cubic-bezier(.22, 1, .36, 1) .6s both;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+   ===================================================== */
+
+.home-image {
+    animation:
+        revealRight 1s cubic-bezier(.22, 1, .36, 1) .2s both;
+}
+
+.home-image img {
+    animation:
+        imageZoom 1.2s cubic-bezier(.22, 1, .36, 1) both;
+
+    transition:
+        transform .8s cubic-bezier(.22, 1, .36, 1),
+        filter .5s ease;
+}
+
+.home-image:hover img {
+    transform: scale(1.035);
+    filter: brightness(1.05);
+}
+
+
+/* Efek floating lembut */
+
+.floating-card {
+    animation:
+        softFloat 4s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   SECTION
+   ===================================================== */
+
+.section {
+    position: relative;
+}
+
+
+/* Garis dekorasi */
+
+.section-title {
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    margin-top: 12px;
+    width: 55px;
+    transition: width .5s ease;
+}
+
+.section-title:hover::after {
+    width: 110px;
+}
+
+
+/* =====================================================
+   PROPERTY / ABOUT CARD
+   ===================================================== */
+
+.about-box,
+.property-card,
+.project-card,
+.skill-card,
+.card {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform .45s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .45s ease,
+        border-color .45s ease;
+}
+
+
+/* Cahaya bergerak */
+
+.about-box::before,
+.property-card::before,
+.project-card::before,
+.skill-card::before,
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+
+    transform: skewX(-20deg);
+
+    transition: left .7s cubic-bezier(.22, 1, .36, 1);
+
+    pointer-events: none;
+}
+
+
+.about-box:hover::before,
+.property-card:hover::before,
+.project-card:hover::before,
+.skill-card:hover::before,
+.card:hover::before {
+    left: 140%;
+}
+
+
+/* Card naik sedikit */
+
+.about-box:hover,
+.property-card:hover,
+.project-card:hover,
+.skill-card:hover,
+.card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* =====================================================
+   PROJECT / PROPERTY CARD STAGGER
+   ===================================================== */
+
+.project-card:nth-child(1),
+.property-card:nth-child(1) {
+    animation:
+        revealUp .8s cubic-bezier(.22, 1, .36, 1) .1s both;
+}
+
+.project-card:nth-child(2),
+.property-card:nth-child(2) {
+    animation:
+        revealUp .8s cubic-bezier(.22, 1, .36, 1) .2s both;
+}
+
+.project-card:nth-child(3),
+.property-card:nth-child(3) {
+    animation:
+        revealUp .8s cubic-bezier(.22, 1, .36, 1) .3s both;
+}
+
+
+/* =====================================================
+   IMAGE PROPERTY
+   ===================================================== */
+
 .property-card img,
 .project-card img {
     transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
+        transform .8s cubic-bezier(.22, 1, .36, 1),
+        filter .5s ease;
 }
 
 .property-card:hover img,
 .project-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.06);
+    filter: brightness(1.04);
 }
 
-/* Footer muncul lembut */
+
+/* =====================================================
+   BUTTON PROFESSIONAL
+   ===================================================== */
+
+.button,
+.btn,
+button {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.button::before,
+.btn::before,
+button::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    transform: skewX(-20deg);
+
+    transition:
+        left .6s cubic-bezier(.22, 1, .36, 1);
+}
+
+.button:hover::before,
+.btn:hover::before,
+button:hover::before {
+    left: 130%;
+}
+
+.button:hover,
+.btn:hover,
+button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   CONTACT
+   ===================================================== */
+
+.contact-box,
+.contact-wrapper {
+    animation:
+        revealUp .9s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+
+/* Input */
+
+input,
+textarea {
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+input:focus,
+textarea:focus {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
 footer {
-    animation: fadeUp 1s ease both;
+    animation:
+        revealUp .8s cubic-bezier(.22, 1, .36, 1) both;
 }
 
-/* Efek glow pada tombol utama */
-.whatsapp-btn,
-.btn-primary,
-.button.primary {
-    animation: softGlow 3s ease-in-out infinite;
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .home-image {
+        animation:
+            revealUp .9s cubic-bezier(.22, 1, .36, 1) .3s both;
+    }
+
+    .project-card:hover,
+    .property-card:hover,
+    .about-box:hover,
+    .skill-card:hover {
+        transform: translateY(-5px);
+    }
 }
 
-/* Scroll halus */
-html {
-    scroll-behavior: smooth;
-}
 
-/* Mengurangi animasi jika user memilih reduced motion */
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
         scroll-behavior: auto !important;
     }
 }
