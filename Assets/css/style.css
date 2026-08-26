@@ -916,3 +916,213 @@ footer p {
         font-size: 12px;
     }
 }
+
+/* =========================================
+   ANIMASI SHIDQIA ABADI PROPERTY
+   ========================================= */
+
+/* Animasi saat halaman pertama dibuka */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi muncul dari kiri */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi muncul dari kanan */
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi mengambang */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animasi glow */
+@keyframes softGlow {
+    0% {
+        box-shadow: 0 0 0 rgba(20, 80, 65, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(20, 80, 65, 0.18);
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgba(20, 80, 65, 0);
+    }
+}
+
+/* Judul utama */
+.hero h1,
+.hero h2 {
+    animation: slideLeft 0.9s ease forwards;
+}
+
+/* Paragraf */
+.hero p {
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+/* Tombol */
+.hero .button,
+.hero a {
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+/* Foto utama */
+.hero img,
+.home-image img {
+    animation:
+        slideRight 1s ease forwards,
+        floating 4s ease-in-out 1.2s infinite;
+}
+
+/* Card */
+.property-card,
+.project-card,
+.card,
+.about-box,
+.skill-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Hover card */
+.property-card:hover,
+.project-card:hover,
+.card:hover,
+.about-box:hover,
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Tombol WhatsApp */
+button,
+.btn,
+.button,
+.whatsapp-btn {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+.whatsapp-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Logo */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 70%;
+}
+
+/* Gambar property */
+.property-card img,
+.project-card img {
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.property-card:hover img,
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Footer muncul lembut */
+footer {
+    animation: fadeUp 1s ease both;
+}
+
+/* Efek glow pada tombol utama */
+.whatsapp-btn,
+.btn-primary,
+.button.primary {
+    animation: softGlow 3s ease-in-out infinite;
+}
+
+/* Scroll halus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mengurangi animasi jika user memilih reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
